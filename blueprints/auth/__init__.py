@@ -24,7 +24,7 @@ class CreateTokenResources(Resource):
         
         if qry is not None:
             client_data= marshal(qry, Clients.response_fields)
-            token = create_access_token(identity=args['client_key'], user_claims={client_data['client_key'], client_data['birth_date']})
+            token = create_access_token(identity=args['client_key'], user_claims={"key":client_data['client_key'], "date":client_data['birth_date']})
         else:
             return {'status': 'UNATHORIZED', 'message': 'invalid key or secret'}, 401
         return {'token': token}, 200

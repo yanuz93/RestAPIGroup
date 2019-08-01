@@ -1,5 +1,4 @@
-[2019-08-01 22:06:22,465]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
-[2019-08-01 22:07:00,863]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
+[2019-08-01 22:02:11,187]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
 Traceback (most recent call last):
   File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
@@ -21,7 +20,7 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.IntegrityError: (1062, "Duplicate entry 'internal' for key 'client_key'")
+pymysql.err.InternalError: (1054, "Unknown column 'client_key' in 'field list'")
 
 The above exception was the direct cause of the following exception:
 
@@ -98,8 +97,8 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'internal' for key 'client_key'")
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'client_key' in 'field list'")
 [SQL: INSERT INTO client (client_key, client_secret, birth_date) VALUES (%(client_key)s, %(client_secret)s, %(birth_date)s)]
 [parameters: {'client_key': 'internal', 'client_secret': 'th1s1s1nt3rn4lcl13nt', 'birth_date': '26-04-1997'}]
-(Background on this error at: http://sqlalche.me/e/gkpj)
-[2019-08-01 22:07:00,870]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
+(Background on this error at: http://sqlalche.me/e/2j85)
+[2019-08-01 22:02:11,197]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}

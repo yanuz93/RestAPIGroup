@@ -38,7 +38,7 @@ def internal_required(fn):
 ####################
 # Database
 #############
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://resita:alta123@localhost:3306/rest_training' # //user:password@host/nama_database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://resita:alta123@localhost:3306/rest' # //user:password@host/nama_database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
@@ -71,5 +71,9 @@ def after_request(response):
 # import blueprints
 #########################################
 from blueprints.anime import bp_anime
+from blueprints.auth import bp_auth
+from blueprints.client.resources import bp_client
 app.register_blueprint(bp_anime,url_prefix='/anime')
+app.register_blueprint(bp_auth, url_prefix='/auth')
+app.register_blueprint(bp_client,url_prefix='/client')
 db.create_all()

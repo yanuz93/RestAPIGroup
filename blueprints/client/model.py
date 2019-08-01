@@ -13,7 +13,7 @@ class Clients(db.Model):
         'id': fields.Integer,
         'client_key': fields.String,
         'client_secret': fields.String,
-        'birth_date': fields.DateTime
+        'birth_date': fields.String
     }
 
     def __init__(self, client_key, client_secret, birth_date):

@@ -2,26 +2,28 @@ import requests
 import json
 from flask import Blueprint
 from flask_restful import Resource, Api, reqparse
-from flask_jwt_extended import jwt_required
-
+from flask_jwt_extended import jwt_required, get_jwt_claims
+import datetime
 
 bp_anime = Blueprint('anime',__name__)
 api = Api(bp_anime)
 
 class AnimeResource(Resource):
     host = 'https://api.jikan.moe/v3/search/anime'
+
+    @jwt_required
     def get(self):
         parser = reqparse.RequestParser()
 
         parser.add_argument('mood', location='args', required=True,choices=('galau', 'sedih' , 'senang' , 'inlove' , 'depresi'))
-        parser.add_argument('usia', location='args', type=int, required=True)
         parser.add_argument('max_eps', location='args', type=int, default=30)
         parser.add_argument('limit', location='args', type=int, default=5)
 
         args = parser.parse_args()
 
         mood = args['mood']
-        usia = args['usia'] 
+        tl = get_jwt_claims()["date"]
+        usia = datetime.date.today().year-datetime.datetime.strptime(tl,'%d-%m-%Y').date().year 
         max_eps = args['max_eps']
         limit = args['limit']
         

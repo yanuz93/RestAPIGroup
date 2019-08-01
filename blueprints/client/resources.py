@@ -19,15 +19,15 @@ class ClientResource(Resource):
             return marshal(qry, Clients.response_fields), 200, {'Content-Type': 'application/json'}
         return {'status': 'Client Not Found'}, 404, {'Content-Type': 'application/json'}
 
-    @jwt_required
+    
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json')
         parser.add_argument('client_secret', location='json')
-        parser.add_argument('status', type=bool, location='json')
+        parser.add_argument('birth_date', location='json')
         data = parser.parse_args()
 
-        client = Clients(data['client_key'], data['client_secret'], data['status'])
+        client = Clients(data['client_key'], data['client_secret'], data['birth_date'])
         db.session.add(client)
         db.session.commit()
 
@@ -40,7 +40,7 @@ class ClientResource(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json')
         parser.add_argument('client_secret', location='json')
-        parser.add_argument('status', type=bool, location='json', required=True)
+        parser.add_argument('birth_date', location='json')
         args = parser.parse_args()
 
         qry = Clients.query.get(id)
@@ -49,7 +49,7 @@ class ClientResource(Resource):
 
         qry.client_key = args['client_key']
         qry.client_secret = args['client_secret']
-        qry.status = args['status']
+        qry.birth_date = args['birth_date']
         db.session.commit()
 
         return marshal(qry, Clients.response_fields), 200, {'Content-Type': 'application/json'}
@@ -79,30 +79,11 @@ class ClientList(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('p', type=int, location='args', default=1)
         parser.add_argument('rp', type=int, location='args', default=25)
-        parser.add_argument('client_id', type=int, location='args')
-        parser.add_argument('status', type=inputs.boolean, location='args', choices=(True, False))
-        parser.add_argument('orderby', location='args', choices=('client_id', 'status'))
-        parser.add_argument('sort', location='args', choices=('asc', 'desc'))
         args = parser.parse_args()
 
         offset = (args['p'] * args['rp']) - args['rp']
 
         qry = Clients.query
-
-        if args['status'] is not None:
-            qry = qry.filter_by(status=args['status'])
-
-        if args['orderby'] is not None:
-            if args['orderby'] == 'client_id':
-                if args['sort'] == 'desc':
-                    qry = qry.order_by(desc(Clients.client_id))
-                else:
-                    qry = qry.order_by((Clients.client_id))
-            elif args['orderby'] == 'status':
-                if args['sort'] == 'desc':
-                    qry = qry.order_by((Clients.client_id).desc())
-                else:
-                    qry = qry.order_by((Clients.client_id))
 
         rows = []
         for row in qry.limit(args['rp']).offset(offset).all():
