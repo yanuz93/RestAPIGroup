@@ -1,71 +1,7 @@
-[2019-08-01 22:14:15,080]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/anime?mood=senang", "request": {"client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
-[2019-08-01 22:15:28,355]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /anime [GET]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 103, in wrapper
-    return fn(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/anime/__init__.py", line 26, in get
-    usia = datetime.date.today().year-datetime.datetime.strptime(tl,'%d-%m-%Y').date().year
-NameError: name 'datetime' is not defined
-[2019-08-01 22:15:28,357]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/anime?mood=senang", "request": {"mood": "senang"}, "response": {"message": "Internal Server Error"}}
-[2019-08-02 08:07:22,985]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"id": 5, "client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}}
-[2019-08-02 08:08:26,223]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/auth?client_key=admin&client_secret=shinjitsuwahitotsu", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ3MDgxMDYsIm5iZiI6MTU2NDcwODEwNiwianRpIjoiYjU3N2M5MTctMTliOC00ZjZkLThhYzMtZTcwODliNWUxZWQ2IiwiZXhwIjoxNTY0Nzk0NTA2LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsia2V5IjoiYWRtaW4iLCJkYXRlIjoiMjYtMDQtMTk5NyJ9fQ.gracUg3w09dNPK9P_-N-M2lDRD0x9ETXTyG77NLgR-U"}}
-[2019-08-02 08:09:07,915]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/__init__.py", line 32, in wrapper
-    role = get_jwt_claims()
-NameError: name 'get_jwt_claims' is not defined
-[2019-08-02 08:09:07,917]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
-[2019-08-02 08:09:44,263]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/__init__.py", line 33, in wrapper
-    if role["client_key"] == 'admin' and role["client_secret"]=='shinjitsuwahitotsu':
-KeyError: 'client_key'
-[2019-08-02 08:09:44,268]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
-[2019-08-02 08:10:16,521]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/__init__.py", line 33, in wrapper
-    if role["client_key"] == 'admin' and role["client_secret"]=='shinjitsuwahitotsu':
-KeyError: 'client_key'
-[2019-08-02 08:10:16,522]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {}, "response": {"message": "Internal Server Error"}}
-[2019-08-02 08:11:33,695]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client?", "request": {}, "response": [{"id": 1, "client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, {"id": 4, "client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, {"id": 5, "client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}]}
-[2019-08-02 08:35:43,139]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "fhjh", "client_secret": "akdjjahda", "birth_date": "23-01-2013"}, "response": {"id": 6, "client_key": "fhjh", "client_secret": "akdjjahda", "birth_date": "23-01-2013"}}
+[2019-08-02 10:27:34,496]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5&max_eps=30", "request": null, "response": {"quotes": "If your life can change once, your life can change again.", "your result": [{"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}, {"judul": "Code Geass: Hangyaku no Lelouch R2", "score": 8.94, "genre": "sci-fi", "url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2"}, {"judul": "Made in Abyss", "score": 8.85, "genre": "sci-fi", "url": "https://myanimelist.net/anime/34599/Made_in_Abyss"}, {"judul": "Cowboy Bebop", "score": 8.82, "genre": "sci-fi", "url": "https://myanimelist.net/anime/1/Cowboy_Bebop"}, {"judul": "Monogatari Series: Second Season", "score": 8.77, "genre": "comedy", "url": "https://myanimelist.net/anime/17074/Monogatari_Series__Second_Season"}]}}
+[2019-08-02 10:29:19,562]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5&max_eps=5", "request": null, "response": {"quotes": "People, who can\u2019t throw something important away, can never hope to change anything.", "your result": []}}
+[2019-08-02 10:31:39,626]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5&max_eps=12", "request": null, "response": {"quotes": "Every journey begins with a single step. We just have to have patience.", "your result": [{"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}]}}
+[2019-08-02 10:31:58,706]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5&max_eps=15", "request": null, "response": {"quotes": "Flat chest is a status symbol!", "your result": [{"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}, {"judul": "Made in Abyss", "score": 8.85, "genre": "sci-fi", "url": "https://myanimelist.net/anime/34599/Made_in_Abyss"}, {"judul": "Mo Dao Zu Shi", "score": 8.63, "genre": "adventure", "url": "https://myanimelist.net/anime/37208/Mo_Dao_Zu_Shi"}]}}
+[2019-08-02 10:32:15,387]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5", "request": null, "response": {"quotes": "If your life can change once, your life can change again.", "your result": [{"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}, {"judul": "Code Geass: Hangyaku no Lelouch R2", "score": 8.94, "genre": "sci-fi", "url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2"}, {"judul": "Made in Abyss", "score": 8.85, "genre": "sci-fi", "url": "https://myanimelist.net/anime/34599/Made_in_Abyss"}, {"judul": "Cowboy Bebop", "score": 8.82, "genre": "sci-fi", "url": "https://myanimelist.net/anime/1/Cowboy_Bebop"}, {"judul": "Monogatari Series: Second Season", "score": 8.77, "genre": "comedy", "url": "https://myanimelist.net/anime/17074/Monogatari_Series__Second_Season"}]}}
+[2019-08-02 10:33:14,451]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5", "request": null, "response": {"quotes": "The ticket to the future is always open.", "your result": [{"judul": "Gintama\u00b0", "score": 9.11, "genre": "sci-fi", "url": "https://myanimelist.net/anime/28977/Gintama\u00b0"}, {"judul": "Fullmetal Alchemist: Brotherhood", "score": 9.1, "genre": "comedy", "url": "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood"}, {"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}, {"judul": "Code Geass: Hangyaku no Lelouch R2", "score": 8.94, "genre": "sci-fi", "url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2"}, {"judul": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze", "score": 8.86, "genre": "adventure", "url": "https://myanimelist.net/anime/37991/JoJo_no_Kimyou_na_Bouken_Part_5__Ougon_no_Kaze"}]}}
+[2019-08-02 10:33:58,098]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=depresi&limit=5", "request": null, "response": {"quotes": "If your life can change once, your life can change again.", "your result": [{"judul": "Gintama\u00b0", "score": 9.11, "genre": "sci-fi", "url": "https://myanimelist.net/anime/28977/Gintama\u00b0"}, {"judul": "Ginga Eiyuu Densetsu", "score": 9.1, "genre": "sci-fi", "url": "https://myanimelist.net/anime/820/Ginga_Eiyuu_Densetsu"}, {"judul": "Fullmetal Alchemist: Brotherhood", "score": 9.1, "genre": "comedy", "url": "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood"}, {"judul": "Owarimonogatari 2nd Season", "score": 8.97, "genre": "comedy", "url": "https://myanimelist.net/anime/35247/Owarimonogatari_2nd_Season"}, {"judul": "Code Geass: Hangyaku no Lelouch R2", "score": 8.94, "genre": "sci-fi", "url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2"}]}}

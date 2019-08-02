@@ -1,29 +1,5 @@
-[2019-08-01 22:04:14,713]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
-    cursor.execute(statement, parameters)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
-    result = self._query(query)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
-    conn.query(q)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
-    result.read()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
-    first_packet = self.connection._read_packet()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
-    packet.check_error()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
-    err.raise_mysql_exception(self._data)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.InternalError: (1054, "Unknown column 'client_key' in 'field list'")
-
-The above exception was the direct cause of the following exception:
-
+[2019-08-02 09:19:21,009]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=galau&usia=22&limit=10&max_eps=25", "request": {"mood": "galau", "usia": "22", "limit": "10", "max_eps": "25"}, "response": [{"mal_id": 33, "url": "https://myanimelist.net/anime/33/Kenpuu_Denki_Berserk", "image_url": "https://cdn.myanimelist.net/images/anime/12/18520.jpg?s=0bb887542ea5385eee775e7d1f0f0d0f", "title": "Kenpuu Denki Berserk", "airing": false, "synopsis": "Born from the corpse of his mother, a young mercenary known only as Guts, embraces the battlefield as his only means of survival. Day in and day out, putting his life on the line just to make enough t...", "type": "TV", "episodes": 25, "score": 8.48, "start_date": "1997-10-08T00:00:00+00:00", "end_date": "1998-04-01T00:00:00+00:00", "members": 345488, "rated": "R+"}, {"mal_id": 1210, "url": "https://myanimelist.net/anime/1210/NHK_ni_Youkoso", "image_url": "https://cdn.myanimelist.net/images/anime/3/52675.jpg?s=e0121ee07b2b86ae6fde9c7f35278a6b", "title": "NHK ni Youkoso!", "airing": false, "synopsis": "Twenty-two-year-old college dropout Tatsuhiro Satou has been a hikikomori for almost four years now. In his isolation, he has come to believe in many obscure conspiracy theories, but there is one in p...", "type": "TV", "episodes": 24, "score": 8.36, "start_date": "2006-07-10T00:00:00+00:00", "end_date": "2006-12-18T00:00:00+00:00", "members": 442802, "rated": "R+"}, {"mal_id": 34537, "url": "https://myanimelist.net/anime/34537/Yoru_wa_Mijikashi_Arukeyo_Otome", "image_url": "https://cdn.myanimelist.net/images/anime/2/86940.jpg?s=838b10398449d3354db5fb604b3b1b17", "title": "Yoru wa Mijikashi Arukeyo Otome", "airing": false, "synopsis": "On a mysterious night that seems to last for a year, an ordinary college student continues to chase one of his underclassmen, a girl with black hair\u2014the girl of his dreams. Up until now, he has been r...", "type": "Movie", "episodes": 1, "score": 8.3, "start_date": "2017-04-07T00:00:00+00:00", "end_date": "2017-04-07T00:00:00+00:00", "members": 50780, "rated": "R+"}, {"mal_id": 3701, "url": "https://myanimelist.net/anime/3701/Kaiba", "image_url": "https://cdn.myanimelist.net/images/anime/7/13193.jpg?s=d906e5574c1aebd02d48d3fe30073a70", "title": "Kaiba", "airing": false, "synopsis": "In a world where memories exist in memory chips separate from the body, death of the body no longer means death of the soul. It is possible for memories to be viewed, altered, and transferred between...", "type": "TV", "episodes": 12, "score": 8.21, "start_date": "2008-04-11T00:00:00+00:00", "end_date": "2008-07-25T00:00:00+00:00", "members": 90487, "rated": "R+"}, {"mal_id": 29095, "url": "https://myanimelist.net/anime/29095/Grisaia_no_Rakuen", "image_url": "https://cdn.myanimelist.net/images/anime/8/72855.jpg?s=ca7af2995c1957ab7f762799fb1a099e", "title": "Grisaia no Rakuen", "airing": false, "synopsis": "Grisaia no Rakuen begins right at the end of the previous installment, Grisaia no Meikyuu. Kazami Yuuji is arrested under suspicion for terrorism. A video showing apparently concrete proof that Yuuji...", "type": "TV", "episodes": 10, "score": 8.01, "start_date": "2015-04-19T00:00:00+00:00", "end_date": "2015-06-21T00:00:00+00:00", "members": 226363, "rated": "R+"}, {"mal_id": 31765, "url": "https://myanimelist.net/anime/31765/Sword_Art_Online_Movie__Ordinal_Scale", "image_url": "https://cdn.myanimelist.net/images/anime/4/83811.jpg?s=92313c5ef2e6df1fd837384c9539c428", "title": "Sword Art Online Movie: Ordinal Scale", "airing": false, "synopsis": "In 2026, four years after the infamous Sword Art Online incident, a revolutionary new form of technology has emerged: the Augma, a device that utilizes an Augmented Reality system. Unlike the Virtual...", "type": "Movie", "episodes": 1, "score": 7.95, "start_date": "2017-02-18T00:00:00+00:00", "end_date": "2017-02-18T00:00:00+00:00", "members": 327558, "rated": "R+"}, {"mal_id": 30240, "url": "https://myanimelist.net/anime/30240/Prison_School", "image_url": "https://cdn.myanimelist.net/images/anime/10/74231.jpg?s=2418943c84ceecae9d67ed76a35ff3c0", "title": "Prison School", "airing": false, "synopsis": "Located on the outskirts of Tokyo, Hachimitsu Private Academy is a prestigious all-girls boarding school, famous for its high-quality education and disciplined students. However, this is all about to...", "type": "TV", "episodes": 12, "score": 7.86, "start_date": "2015-07-11T00:00:00+00:00", "end_date": "2015-09-26T00:00:00+00:00", "members": 479876, "rated": "R+"}, {"mal_id": 31711, "url": "https://myanimelist.net/anime/31711/To_LOVE-Ru_Darkness_2nd_Specials", "image_url": "https://cdn.myanimelist.net/images/anime/9/79330.jpg?s=aeb985e9861891ed82f0863ce65c8e39", "title": "To LOVE-Ru Darkness 2nd Specials", "airing": false, "synopsis": "Extra episodes of To LOVE-Ru Darkness 2nd bundled with the seventh Blu-ray and DVD volume.", "type": "Special", "episodes": 2, "score": 7.78, "start_date": "2016-02-26T00:00:00+00:00", "end_date": "2016-02-26T00:00:00+00:00", "members": 53360, "rated": "R+"}, {"mal_id": 32, "url": "https://myanimelist.net/anime/32/Neon_Genesis_Evangelion__The_End_of_Evangelion", "image_url": "https://cdn.myanimelist.net/images/anime/12/39305.jpg?s=28e24089c08d7b088d7cb1c259a4cbf3", "title": "Neon Genesis Evangelion: The End of Evangelion", "airing": false, "synopsis": "With the final Angel vanquished, Nerv has one last enemy left to face\u2014the humans under Seele's command. Left in a deep depression nearing the end of the original series, an indecisive Shinji Ikari str...", "type": "Movie", "episodes": 1, "score": 8.52, "start_date": "1997-07-19T00:00:00+00:00", "end_date": "1997-07-19T00:00:00+00:00", "members": 369770, "rated": "R+"}, {"mal_id": 437, "url": "https://myanimelist.net/anime/437/Perfect_Blue", "image_url": "https://cdn.myanimelist.net/images/anime/11/79127.jpg?s=9b05b16f15f6d4d6ead6a275493a0c41", "title": "Perfect Blue", "airing": false, "synopsis": "J-pop idol group CHAM! has spent the last two years entertaining its fans. Sadly, all good things must come to an end, and CHAM! must see one of its members, Mima Kirigoe, leave the group to pursue he...", "type": "Movie", "episodes": 1, "score": 8.38, "start_date": "1998-02-28T00:00:00+00:00", "end_date": "1998-02-28T00:00:00+00:00", "members": 234722, "rated": "R+"}]}
+[2019-08-02 09:21:35,464]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /anime [GET]
 Traceback (most recent call last):
   File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
     rv = self.dispatch_request()
@@ -35,102 +11,11 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/client/resources.py", line 32, in post
-    db.session.commit()
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1027, in commit
-    self.transaction.commit()
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 494, in commit
-    self._prepare_impl()
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 473, in _prepare_impl
-    self.session.flush()
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2459, in flush
-    self._flush(objects)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2597, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
-    raise value
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2557, in _flush
-    flush_context.execute()
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
-    uow,
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
-    insert,
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 1138, in _emit_insert_statements
-    statement, params
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
-    raise value.with_traceback(tb)
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
-    cursor.execute(statement, parameters)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
-    result = self._query(query)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
-    conn.query(q)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
-    result.read()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
-    first_packet = self.connection._read_packet()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
-    packet.check_error()
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
-    err.raise_mysql_exception(self._data)
-  File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
-    raise errorclass(errno, errval)
-sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'client_key' in 'field list'")
-[SQL: INSERT INTO client (client_key, client_secret, birth_date) VALUES (%(client_key)s, %(client_secret)s, %(birth_date)s)]
-[parameters: {'client_key': 'internal', 'client_secret': 'th1s1s1nt3rn4lcl13nt', 'birth_date': '26-04-1997'}]
-(Background on this error at: http://sqlalche.me/e/2j85)
-[2019-08-01 22:04:14,722]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
-[2019-08-01 22:06:22,463]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/fields.py", line 360, in format
-    return _rfc822(value)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/fields.py", line 403, in _rfc822
-    return formatdate(timegm(dt.utctimetuple()))
-AttributeError: 'str' object has no attribute 'utctimetuple'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta13/Music/project/blueprints/client/resources.py", line 36, in post
-    return marshal(client, Clients.response_fields), 200, {'Content-Type': 'application/json'}
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 626, in marshal
-    return OrderedDict([(envelope, OrderedDict(items))]) if envelope else OrderedDict(items)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 625, in <genexpr>
-    for k, v in fields.items())
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/fields.py", line 126, in output
-    return self.format(value)
-  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/fields.py", line 368, in format
-    raise MarshallingException(ae)
-flask_restful.fields.MarshallingException: 'str' object has no attribute 'utctimetuple'
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 103, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/alta13/Music/project/blueprints/anime/__init__.py", line 67, in get
+    id_hasil.append(anime["mal_id"])
+KeyError: 'mal_id'
+[2019-08-02 09:21:35,467]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/anime?mood=galau&usia=22&limit=10&max_eps=25", "request": {"mood": "galau", "usia": "22", "limit": "10", "max_eps": "25"}, "response": {"message": "Internal Server Error"}}
+[2019-08-02 09:22:38,443]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=galau&usia=22&limit=10&max_eps=25", "request": {"mood": "galau", "usia": "22", "limit": "10", "max_eps": "25"}, "response": [{"judul": "Kenpuu Denki Berserk", "score": 8.48, "genre": 22}, {"judul": "NHK ni Youkoso!", "score": 8.36, "genre": 22}, {"judul": "Yoru wa Mijikashi Arukeyo Otome", "score": 8.3, "genre": 22}, {"judul": "Kaiba", "score": 8.21, "genre": 22}, {"judul": "Grisaia no Rakuen", "score": 8.01, "genre": 22}, {"judul": "Sword Art Online Movie: Ordinal Scale", "score": 7.95, "genre": 22}, {"judul": "Prison School", "score": 7.86, "genre": 22}, {"judul": "To LOVE-Ru Darkness 2nd Specials", "score": 7.78, "genre": 22}, {"judul": "Neon Genesis Evangelion: The End of Evangelion", "score": 8.52, "genre": 8}, {"judul": "Perfect Blue", "score": 8.38, "genre": 8}]}
+[2019-08-02 09:33:56,353]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/anime?mood=galau&usia=22&limit=10&max_eps=25", "request": {"mood": "galau", "usia": "22", "limit": "10", "max_eps": "25"}, "response": [{"judul": "Kimi no Iru Machi", "score": 7.08, "genre": 36}, {"judul": "Kimi no Iru Machi OVA", "score": 7.14, "genre": 36}, {"judul": "Boku wa Tomodachi ga Sukunai: Relay Shousetsu wa Ketsumatsu ga Hanpanai", "score": 7.17, "genre": 36}, {"judul": "Yokohama Kaidashi Kikou: Quiet Country Cafe", "score": 7.24, "genre": 36}, {"judul": "Kimi ga Nozomu Eien", "score": 7.32, "genre": 36}, {"judul": "Boku wa Tomodachi ga Sukunai", "score": 7.41, "genre": 36}, {"judul": "Boku wa Tomodachi ga Sukunai Next", "score": 7.54, "genre": 36}, {"judul": "To LOVE-Ru Darkness 2nd Specials", "score": 7.78, "genre": 22}, {"judul": "Prison School", "score": 7.86, "genre": 22}, {"judul": "Sword Art Online Movie: Ordinal Scale", "score": 7.95, "genre": 22}]}
