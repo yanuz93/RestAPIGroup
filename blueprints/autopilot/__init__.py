@@ -1,8 +1,10 @@
-from tests import create_token_int
+# from tests import create_token_int
 import requests
 import json
 from flask import Blueprint
 from flask_restful import Resource, Api, reqparse
+from blueprints.auth import CreateTokenResources
+from blueprints.anime import AnimeResource
 # from flask_jwt_extended import jwt_required, get_jwt_claims
 # import datetime
 
@@ -17,7 +19,7 @@ class AutoResource(Resource):
 
         parser.add_argument('client_key',location='args')
         parser.add_argument('client_secret', location='args')
-        parser.add_argument('mood', location='args', required=True,choices=('galau', 'sedih' , 'senang' , 'inlove' , 'depresi'))
+        parser.add_argument('mood', location='args', default='senang',choices=('galau', 'sedih' , 'senang' , 'inlove' , 'depresi'))
         parser.add_argument('max_eps', location='args', type=int, default=1000)
         parser.add_argument('limit', location='args', type=int, default=5)
 
@@ -37,6 +39,7 @@ class AutoResource(Resource):
             "client_key" : key,
             "client_secret" : secret
         }
+        # tembak_login = CreateTokenResources().get()
         tembak_login = requests.get('http://0.0.0.0:6000/auth', params=login_data)
         token = tembak_login.json()["token"]
 
@@ -50,7 +53,8 @@ class AutoResource(Resource):
             "limit" : limit
         }
 
-        tembak_rekomen = requests.get('http://0.0.0.0:6000/anime', params= data_anime,headers={'Authorization': 'Bearer '+ token})
+        # tembak_rekomen = AnimeResource().get(query_strings=data_anime, headers={'Authorization': 'Bearer '+ token})
+        requests.get('http://0.0.0.0:6000/anime', params= data_anime,headers={'Authorization': 'Bearer '+ token})
 
         hasil = tembak_rekomen.json()
         return hasil,200
