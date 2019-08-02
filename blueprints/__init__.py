@@ -3,7 +3,7 @@ import json
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
-from flask_jwt_extended import JWTManager, verify_jwt_in_request, get_jwt_identity
+from flask_jwt_extended import JWTManager, verify_jwt_in_request, get_jwt_identity, get_jwt_claims
 from datetime import timedelta
 from functools import wraps
 
@@ -18,19 +18,19 @@ app.config['JWT_SECRET_KEY'] = 'Ak4ch4nt0b0ku'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=1)
 
 jwt = JWTManager(app)
-@jwt.user_claims_loader
-def add_claims_to_access_token(identity):
-    return {
-        'claims' : identity,
-        'identifier' : 'ALTABATCH3'
-    }
+# @jwt.user_claims_loader
+# def add_claims_to_access_token(identity):
+#     return {
+#         'claims' : identity,
+#         'identifier' : 'ALTABATCH3'
+#     }
 
 def internal_required(fn):
     @wraps(fn)
     def wrapper(*args,**kwargs):
         verify_jwt_in_request()
-        role = get_jwt_identity()
-        if role == 'internal':
+        role = get_jwt_claims()
+        if role["key"] == 'admin' :
             return fn(*args, **kwargs)
         else:
             return {'status':'Forbidden', 'message' : 'internal only'},403

@@ -17,3 +17,55 @@ Traceback (most recent call last):
     usia = datetime.date.today().year-datetime.datetime.strptime(tl,'%d-%m-%Y').date().year
 NameError: name 'datetime' is not defined
 [2019-08-01 22:15:28,357]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/anime?mood=senang", "request": {"mood": "senang"}, "response": {"message": "Internal Server Error"}}
+[2019-08-02 08:07:22,985]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"id": 5, "client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}}
+[2019-08-02 08:08:26,223]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/auth?client_key=admin&client_secret=shinjitsuwahitotsu", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ3MDgxMDYsIm5iZiI6MTU2NDcwODEwNiwianRpIjoiYjU3N2M5MTctMTliOC00ZjZkLThhYzMtZTcwODliNWUxZWQ2IiwiZXhwIjoxNTY0Nzk0NTA2LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsia2V5IjoiYWRtaW4iLCJkYXRlIjoiMjYtMDQtMTk5NyJ9fQ.gracUg3w09dNPK9P_-N-M2lDRD0x9ETXTyG77NLgR-U"}}
+[2019-08-02 08:09:07,915]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
+Traceback (most recent call last):
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta13/Music/project/blueprints/__init__.py", line 32, in wrapper
+    role = get_jwt_claims()
+NameError: name 'get_jwt_claims' is not defined
+[2019-08-02 08:09:07,917]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
+[2019-08-02 08:09:44,263]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
+Traceback (most recent call last):
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta13/Music/project/blueprints/__init__.py", line 33, in wrapper
+    if role["client_key"] == 'admin' and role["client_secret"]=='shinjitsuwahitotsu':
+KeyError: 'client_key'
+[2019-08-02 08:09:44,268]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
+[2019-08-02 08:10:16,521]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [GET]
+Traceback (most recent call last):
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta13/Music/project/blueprints/__init__.py", line 33, in wrapper
+    if role["client_key"] == 'admin' and role["client_secret"]=='shinjitsuwahitotsu':
+KeyError: 'client_key'
+[2019-08-02 08:10:16,522]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {}, "response": {"message": "Internal Server Error"}}
+[2019-08-02 08:11:33,695]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client?", "request": {}, "response": [{"id": 1, "client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, {"id": 4, "client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, {"id": 5, "client_key": "admin", "client_secret": "shinjitsuwahitotsu", "birth_date": "26-04-1997"}]}
+[2019-08-02 08:35:43,139]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "fhjh", "client_secret": "akdjjahda", "birth_date": "23-01-2013"}, "response": {"id": 6, "client_key": "fhjh", "client_secret": "akdjjahda", "birth_date": "23-01-2013"}}

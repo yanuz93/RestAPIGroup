@@ -12,7 +12,7 @@ class ClientResource(Resource):
     def __init__(self):
         pass
     
-    @jwt_required
+    @internal_required
     def get(self, id): # get by id
         qry = Clients.query.get(id)
         if qry is not None:
@@ -35,7 +35,7 @@ class ClientResource(Resource):
 
         return marshal(client, Clients.response_fields), 200, {'Content-Type': 'application/json'}
 
-    @jwt_required
+    @internal_required
     def put(self, id):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json')
@@ -54,7 +54,7 @@ class ClientResource(Resource):
 
         return marshal(qry, Clients.response_fields), 200, {'Content-Type': 'application/json'}
 
-    @jwt_required
+    @internal_required
     def delete(self, id):
         qry = Clients.query.get(id)
         if qry is None:
@@ -73,7 +73,7 @@ class ClientList(Resource):
     def __init__(self):
         pass
 
-    @jwt_required
+
     @internal_required
     def get(self):
         parser = reqparse.RequestParser()
