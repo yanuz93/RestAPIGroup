@@ -73,7 +73,9 @@ def after_request(response):
 from blueprints.anime import bp_anime
 from blueprints.auth import bp_auth
 from blueprints.client.resources import bp_client
+from blueprints.autopilot import bp_auto
 app.register_blueprint(bp_anime,url_prefix='/anime')
 app.register_blueprint(bp_auth, url_prefix='/auth')
 app.register_blueprint(bp_client,url_prefix='/client')
+app.register_blueprint(bp_auto,url_prefix='/auto')
 db.create_all()

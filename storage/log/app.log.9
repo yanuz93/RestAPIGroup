@@ -1,4 +1,4 @@
-[2019-08-01 22:03:48,947]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
+[2019-08-01 22:07:26,408]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /client [POST]
 Traceback (most recent call last):
   File "/home/alta13/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
@@ -20,7 +20,7 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.InternalError: (1054, "Unknown column 'client_key' in 'field list'")
+pymysql.err.IntegrityError: (1062, "Duplicate entry 'internal' for key 'client_key'")
 
 The above exception was the direct cause of the following exception:
 
@@ -97,8 +97,27 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta13/.local/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'client_key' in 'field list'")
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'internal' for key 'client_key'")
 [SQL: INSERT INTO client (client_key, client_secret, birth_date) VALUES (%(client_key)s, %(client_secret)s, %(birth_date)s)]
 [parameters: {'client_key': 'internal', 'client_secret': 'th1s1s1nt3rn4lcl13nt', 'birth_date': '26-04-1997'}]
-(Background on this error at: http://sqlalche.me/e/2j85)
-[2019-08-01 22:03:48,951]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
+(Background on this error at: http://sqlalche.me/e/gkpj)
+[2019-08-01 22:07:26,414]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "internal", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "Internal Server Error"}}
+[2019-08-01 22:07:42,488]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"id": 4, "client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}}
+[2019-08-01 22:14:06,378]{/home/alta13/Music/project/blueprints/__init__.py:64} WARNING - REQUEST_LOG	{"method": "POST", "code": "405 METHOD NOT ALLOWED", "uri": "/anime?mood=senang", "request": {"client_key": "internal1", "client_secret": "th1s1s1nt3rn4lcl13nt", "birth_date": "26-04-1997"}, "response": {"message": "The method is not allowed for the requested URL."}}
+[2019-08-01 22:14:15,079]{/home/alta13/.local/lib/python3.6/site-packages/flask/app.py:1891} ERROR - Exception on /anime [GET]
+Traceback (most recent call last):
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta13/.local/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 103, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/alta13/Music/project/blueprints/anime/__init__.py", line 26, in get
+    usia = datetime.date.today().year-datetime.datetime.strptime(tl,'%d-%m-%Y').date().year
+NameError: name 'datetime' is not defined

@@ -95,7 +95,7 @@ class AnimeResource(Resource):
                     hasil[j], hasil[j+1] = hasil[j+1], hasil[j]
                     score_anime[j], score_anime[j+1] = score_anime[j+1], score_anime[j]        
 
-        return {"quotes": quote["quo"], "your result":hasil[:limit]}, 200
+        return {"quotes": quote["quo"]+"~~"+quote["character"]+"-"+quote["anime"], "your result":hasil[:limit]}, 200
     
 
 api.add_resource(AnimeResource,'')        
